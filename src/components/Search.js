@@ -11,7 +11,9 @@ function Search(props) {
                 <InputGroup.Append>
                     <Button onClick = {props.onClick} variant="outline-secondary">Search</Button>
                 </InputGroup.Append>
+                <Button style = {{marginLeft: '10px'}} onClick = {props.onDoubleClick} variant="secondary">Reset</Button>
             </InputGroup>
+            
         </div>
     )
 }

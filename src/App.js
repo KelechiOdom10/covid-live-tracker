@@ -15,6 +15,7 @@ function App() {
     setTypedCountry(e.target.value)
   }
 
+
   useEffect(() =>{
     axios
       .all([
@@ -51,13 +52,14 @@ function App() {
     )
   })
 
+  const reset = () => setSearchCountry('')
 
 
   return (
     <div className="App">
       <h1>COVID-19 Live Tracker</h1>
       <Worldcases cases = {latest.cases} recoveries = {latest.recovered} deaths = {latest.deaths} updated = {lastUpdated} />
-      <Search onChange = {handleSearch} value = {typedCountry} onClick = {typedToSearch} />
+      <Search onChange = {handleSearch} value = {typedCountry} onClick = {typedToSearch} on />
       <div className= 'worldstats'>{countries}</div>
     </div>
   );
