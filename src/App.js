@@ -24,11 +24,15 @@ function App() {
         setLatest(responseArr[0].data);
         setResults(responseArr[1].data);
       })
-  }, [])
+  }, []);
 
-  const lastUpdated = new Date(parseInt(latest.updated)).toUTCString()
+  const lastUpdated = new Date(parseInt(latest.updated)).toUTCString();
 
-  const countries = results.map(result => {
+  const filterCountry = results.filter(item => {
+    return searchCountry !== '' ? item.country.toLowerCase() === searchCountry.toLowerCase() : item
+  });
+
+  const countries = filterCountry.map(result => {
     return(
       <Countries 
         src={result.countryInfo.flag} 
@@ -42,11 +46,13 @@ function App() {
     )
   })
 
+
+
   return (
     <div className="App">
       <h1>COVID-19 Live Tracker</h1>
       <Worldcases cases = {latest.cases} recoveries = {latest.recovered} deaths = {latest.deaths} updated = {lastUpdated} />
-      <Search onChange = {handleSearch} value = {searchCountry} />
+      <Search onChange = {handleSearch} value = {searchCountry} onClick = {filterCountry} />
       <div className= 'worldstats'>{countries}</div>
     </div>
   );
