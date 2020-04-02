@@ -4,10 +4,19 @@ import axios from 'axios';
 import './App.css';
 
 function App() {
-  const [latest, setLatest] = React.useState('');
+  const [latest, setLatest] = React.useState([]);
+  const [results, setResults] = React.useState([]);
 
   useEffect(() =>{
-    axios.get('https://corona.lmao.ninja/all').then(response => setLatest(response.data))
+    axios
+      .all([
+        axios.get("https://corona.lmao.ninja/all"),
+        axios.get("https://corona.lmao.ninja/countries")
+      ])
+      .then(responseArr => {
+        setLatest(responseArr[0].data);
+        setResults(responseArr[1].data);
+      })
   }, [])
 
   const lastUpdated = new Date(parseInt(latest.updated)).toUTCString()

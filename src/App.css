@@ -40,7 +40,10 @@
 }
 
 .worldstats{
-  display: flex;
-  padding: 1em;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+  grid-gap: 40px;
+  margin: 40px auto;
+  place-items: center;
+  max-width: 1000px;
 }
