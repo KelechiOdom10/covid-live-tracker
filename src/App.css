@@ -43,7 +43,18 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
   grid-gap: 40px;
-  margin: 40px auto;
+  margin: 0 auto;
   place-items: center;
   max-width: 1000px;
+}
+
+.box{
+  box-shadow: 9px 5px 30px -1px rgba(0,0,0,0.75);
+  border-radius: 30px;
+  place-items: center;
+  margin: 0 auto;
+}
+
+.search{
+  padding: 1.5em;
 }
