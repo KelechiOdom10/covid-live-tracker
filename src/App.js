@@ -52,14 +52,17 @@ function App() {
     )
   })
 
-  const reset = () => setSearchCountry('')
+  const reset = () => {
+    setSearchCountry('')
+    setTypedCountry('')
+}
 
 
   return (
     <div className="App">
       <h1>COVID-19 Live Tracker</h1>
       <Worldcases cases = {latest.cases} recoveries = {latest.recovered} deaths = {latest.deaths} updated = {lastUpdated} />
-      <Search onChange = {handleSearch} value = {typedCountry} onClick = {typedToSearch} on />
+      <Search onChange = {handleSearch} value = {typedCountry} onClick = {typedToSearch} onDoubleClick = {reset} />
       <div className= 'worldstats'>{countries}</div>
     </div>
   );
