@@ -5,7 +5,7 @@ function Search(props) {
     return (
         <div className = 'search'>
             <InputGroup className="mb-3" style = {{maxWidth: '800px', margin: '0 auto'}}>
-                <FormControl onChange = {props.onChange}
+                <FormControl onChange = {props.onChange} value = {props.value}
                     placeholder="Search country..."
                 />
                 <InputGroup.Append>

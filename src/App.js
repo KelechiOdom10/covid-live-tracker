@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Worldcases from './components/Worldcases.js';
-import {Card} from 'react-bootstrap';
 import axios from 'axios';
 import './App.css';
 import Search from './components/Search.js';
+import Countries from './components/Countries.js';
 
 function App() {
   const [latest, setLatest] = React.useState([]);
@@ -30,19 +30,15 @@ function App() {
 
   const countries = results.map(result => {
     return(
-      <div className = 'box'>
-        <Card style={{ width: '20rem' }}>
-          <Card.Img variant="top" src={result.countryInfo.flag} style ={{height: '180px'}} />
-          <Card.Body>
-            <Card.Title style = {{fontWeight: 'bold', fontSize: '28px'}}>{result.country}</Card.Title>
-            <Card.Text style = {{borderBottom: '0.02px solid grey'}}><span style ={{fontWeight: 'bold'}}>Cases: </span>{result.cases}</Card.Text>
-            <Card.Text style = {{borderBottom: '0.02px solid grey'}}><span style ={{fontWeight: 'bold'}}>Recovered: </span>{result.recovered}</Card.Text>
-            <Card.Text style = {{borderBottom: '0.02px solid grey'}}><span style ={{fontWeight: 'bold'}}>Deaths: </span>{result.deaths}</Card.Text>
-            <Card.Text style = {{borderBottom: '0.02px solid grey'}}><span style ={{fontWeight: 'bold'}}>Active: </span>{result.active}</Card.Text>
-            <Card.Text style = {{borderBottom: '0 solid grey'}}><span style ={{fontWeight: 'bold'}}>Critical: </span>{result.critical}</Card.Text>
-          </Card.Body>
-        </Card>
-      </div>
+      <Countries 
+        src={result.countryInfo.flag} 
+        country={result.country} 
+        cases = {result.cases} 
+        recovered = {result.recovered} 
+        deaths = {result.deaths}
+        active = {result.active}
+        critical = {result.critical}
+      />
     )
   })
 
@@ -50,7 +46,7 @@ function App() {
     <div className="App">
       <h1>COVID-19 Live Tracker</h1>
       <Worldcases cases = {latest.cases} recoveries = {latest.recovered} deaths = {latest.deaths} updated = {lastUpdated} />
-      <Search onChange = {handleSearch}  />
+      <Search onChange = {handleSearch} value = {searchCountry} />
       <div className= 'worldstats'>{countries}</div>
     </div>
   );
