@@ -2,10 +2,16 @@ import React, {useState, useEffect} from 'react';
 import Worldcases from './components/Worldcases.js'
 import axios from 'axios';
 import './App.css';
+import Search from './components/Search.js';
 
 function App() {
   const [latest, setLatest] = React.useState([]);
   const [results, setResults] = React.useState([]);
+  const [searchCountry, setSearchCountry] = React.useState('')
+
+  const handleSearch = (e) =>{
+    setSearchCountry(e.target.value)
+  }
 
   useEffect(() =>{
     axios
@@ -25,6 +31,7 @@ function App() {
     <div className="App">
       <h1>COVID-199999999999999999999999999</h1>
       <Worldcases cases = {latest.cases} recoveries = {latest.recovered} deaths = {latest.deaths} updated = {lastUpdated} />
+      <Search onChange = {handleSearch}  />
     </div>
   );
 }
