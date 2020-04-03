@@ -4,7 +4,7 @@ import {Card} from 'react-bootstrap';
 function Countries(props) {
     return(
         <div className = 'box'>
-        <Card style={{ width: '17rem',border: 'none', height: '25.1rem', borderRadius: '8px'}}>
+        <Card style={{ width: '17rem',border: 'none', height: 'auto', borderRadius: '8px'}}>
           <Card.Img variant="top" src={props.src} style ={{height: '150px', borderRadius: '2px'}} />
           <Card.Body>
             <Card.Title style = {{fontWeight: 'bold', fontSize: '28px'}}>{props.country}</Card.Title>

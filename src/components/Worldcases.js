@@ -4,7 +4,7 @@ import {Card} from 'react-bootstrap';
 function Worldcases(props) {
     return (
     <div className = 'worldstats'>
-        <Card bg={"dark"} text ={'white'} style={{ width: '20rem' }}>
+        <Card bg={"dark"} text ={'white'} style={{ width: '17rem', height: '10rem' }}>
         <Card.Body>
          <Card.Title>Cases</Card.Title>
             {props.cases}
@@ -12,7 +12,7 @@ function Worldcases(props) {
         <Card.Footer>Last Updated: {props.updated}</Card.Footer>
       </Card>
 
-      <Card bg={"danger"} text ={'white'} style={{ width: '20rem' }}>
+      <Card bg={"danger"} text ={'white'} style={{ width: '17rem', height: '10rem'  }}>
         <Card.Body>
          <Card.Title>Deaths</Card.Title>
             {props.deaths}
@@ -20,7 +20,7 @@ function Worldcases(props) {
         <Card.Footer>Last Updated: {props.updated}</Card.Footer>
       </Card>
 
-      <Card bg={"success"} text ={'white'} style={{ width: '20rem' }}>
+      <Card bg={"success"} text ={'white'} style={{ width: '17rem', height: '10rem'  }}>
         <Card.Body>
          <Card.Title>Recoveries</Card.Title>
             {props.recoveries}
