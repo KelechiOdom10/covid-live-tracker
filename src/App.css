@@ -16,6 +16,11 @@ body{
   place-items: center;
   color: white;
   margin-bottom: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
 }
 
 .nav .nav-links{
@@ -52,8 +57,81 @@ body{
   padding: 1.5em;
 }
 
+.contact{
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  place-items: center;
+  justify-content: space-between;
+  padding: 2em;
+  max-height: 70vh;
+  flex: 1;
+}
+
+.formss{
+  width: 35vw;
+  height: 75vh;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18rem;
+}
+
+.contactimage{
+  height: 50vh;
+  place-items: center;
+}
+
+.formimg{
+
+  align-items: center;
+  margin-left: 2em;
+  padding: 1.5rem;
+}
+
+@media only screen and (max-width: 1000px){
+    .formimg{
+      display: none;
+    }
+    .formss{
+      width: 90vw;
+      justify-content: center;
+      place-items: center;
+      border: none;
+      margin:auto;
+      border-radius: 5px;
+      margin-top: 7rem;
+      padding: 1em;
+      height: auto;
+      background-color: white;
+    }
+
+}
+
+
+@media only screen and (max-width: 750px){
+  .formss{
+    width: 90vw;
+    justify-content: center;
+    place-items: center;
+    border: none;
+    margin:auto;
+    border-radius: 5px;
+    margin-top: 2rem;
+    padding: 1em;
+    height: auto;
+    background-color: white;
+  }
+  .formimg{
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 600px){
   .covididentifier{
     display: none;
   }
+  .formimg{
+    display: none;
+  }
+  
 }

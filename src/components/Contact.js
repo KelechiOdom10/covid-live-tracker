@@ -1,8 +1,14 @@
 import React from 'react';
+import ContactForm from './Form'
 
 function Contact() {
     return(
-       <h1>Bye sirr</h1>
+       <div className = 'contact'>
+           <ContactForm />
+           <div className = 'contactimage'>
+            <img className = 'formimg' src ='./assets/contact.png' />
+           </div>
+       </div>
     )
 }
 
