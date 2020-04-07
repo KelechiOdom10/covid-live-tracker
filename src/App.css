@@ -16,11 +16,7 @@ body{
   place-items: center;
   color: white;
   margin-bottom: 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
+
 }
 
 .nav .nav-links{
@@ -99,7 +95,6 @@ body{
       border: none;
       margin:auto;
       border-radius: 5px;
-      margin-top: 7rem;
       padding: 1em;
       height: auto;
       background-color: white;
@@ -116,8 +111,7 @@ body{
     border: none;
     margin:auto;
     border-radius: 5px;
-    margin-top: 2rem;
-    padding: 1em;
+    padding: .5em;
     height: auto;
     background-color: white;
   }
