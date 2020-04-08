@@ -98,6 +98,8 @@ body{
       padding: 1em;
       height: auto;
       background-color: white;
+    box-shadow: 9px 5px 30px -1px rgba(0,0,0,0.75);
+
     }
 
 }
@@ -114,6 +116,7 @@ body{
     padding: .5em;
     height: auto;
     background-color: white;
+    box-shadow: 9px 5px 30px -1px rgba(0,0,0,0.75);
   }
   .formimg{
     display: none;
