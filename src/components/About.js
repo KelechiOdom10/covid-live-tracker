@@ -34,7 +34,7 @@ function About() {
 				occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 				mollit anim id est laborum.
 			</p>
-			<img className="aboutimg" src="/assets/dummy.gif"></img>
+			<img className="aboutimg" src="/assets/dummy.gif" alt=""></img>
 			<h2>Installation/Setup</h2>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
