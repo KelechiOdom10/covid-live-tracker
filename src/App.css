@@ -84,6 +84,20 @@ body{
   padding: 1.5rem;
 }
 
+.aboutpage{
+  text-align: justify;
+  max-width: 60vw;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.aboutimg{
+  width: 60vw;
+  margin-bottom:1.5rem;
+  justify-self: center;
+  align-items: center;
+}
+
 @media only screen and (max-width: 1000px){
     .formimg{
       display: none;
@@ -120,6 +134,18 @@ body{
   }
   .formimg{
     display: none;
+  }
+  .aboutpage{
+    text-align: justify;
+    max-width: 85vw;
+    margin: 0 auto;
+    padding: 1em;
+  }
+  .aboutimg{
+    width: 80vw;
+    margin-bottom:1.5rem;
+    justify-self: center;
+    align-items: center;
   }
 }
 
