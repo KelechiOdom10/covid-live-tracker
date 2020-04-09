@@ -1,15 +1,15 @@
-import React from 'react';
-import ContactForm from './Form'
+import React from "react";
+import ContactForm from "./Form";
 
 function Contact() {
-    return(
-       <div className = 'contact'>
-           <ContactForm />
-           <div className = 'contactimage'>
-            <img className = 'formimg' src ='./assets/contact.png' />
-           </div>
-       </div>
-    )
+	return (
+		<div className="contact">
+			<ContactForm />
+			<div className="contactimage">
+				<img className="formimg" src="./assets/contact.png" />
+			</div>
+		</div>
+	);
 }
 
-export default Contact
+export default Contact;
