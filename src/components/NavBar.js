@@ -5,7 +5,7 @@ function NavBar() {
 	return (
 		<div className="nav">
 			<Link to="/" style={{ color: "white" }}>
-				<img src="./assets/covid.svg" style={{ height: "6vh" }} />
+				<img src="./assets/covid.svg" alt="" style={{ height: "6vh" }} />
 				<span className="covididentifier"> COVID-19 Live Tracker</span>
 			</Link>
 			<ul className="nav-links">
