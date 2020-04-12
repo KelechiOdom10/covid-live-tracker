@@ -40,15 +40,27 @@ function About() {
 			</p>
 			<h2>How it works</h2>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-				veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-				commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-				velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-				occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-				mollit anim id est laborum. How
+				The functionality of the app is very simple. I am gathering the
+				statistics of covid cases and deaths for each country affected and
+				displaying that in the cards. Users can search specifically for the
+				country they want to see and click on search and only the information
+				for that country will be displayed. <br />
+				<br />
+				To make the search functionality easy for users that are not sure of the
+				right spelling for the country they are looking an extra feature was
+				added where once they know a couple of consecutive letters in the
+				country's name and search for that a list of countries that includes
+				that string of text will be displayed. The search bar is also case
+				insensitive so no matter how the text is typed it will return the right
+				results.
+				<br />
+				<br />
+				There is a 'Show All' button which acts as a reset button and displays
+				all the countries once again after a user has searched for a specific
+				country or a list of countries. A demo of the app has been included
+				below to show how it all works:
 			</p>
-			<img className="aboutimg" src="/assets/dummy.gif" alt=""></img>
+			<img className="aboutimg" src="/assets/coviddemo.gif" alt=""></img>
 			<h2>Technologies</h2>
 			<p>
 				The languages as well as the libraries used can be seen below:
