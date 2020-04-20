@@ -1,4 +1,4 @@
-body{
+body {
   background-color: #EBF2F0;
 }
 
@@ -8,7 +8,7 @@ body{
   margin: 0 auto;
 }
 
-.nav{
+.nav {
   display: flex;
   justify-content: space-around;
   min-height: 6vh;
@@ -19,7 +19,7 @@ body{
 
 }
 
-.nav .nav-links{
+.nav .nav-links {
   display: flex;
   justify-content: space-between;
   place-items: center;
@@ -27,11 +27,11 @@ body{
   margin: 10px 10px;
 }
 
-.nav-links li{
+.nav-links li {
   margin-right: 20px;
 }
 
-.worldstats{
+.worldstats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
   grid-gap: 40px;
@@ -40,20 +40,20 @@ body{
   max-width: 1000px;
 }
 
-.box{
-  box-shadow: 9px 5px 30px -1px rgba(0,0,0,0.75);
+.box {
+  box-shadow: 9px 5px 30px -1px rgba(0, 0, 0, 0.75);
   border-radius: 30px;
   place-items: center;
   margin: 0 auto;
 }
 
-.search{
+.search {
   max-width: 700px;
   margin: 0 auto;
   padding: 1.5em;
 }
 
-.contact{
+.contact {
   max-width: 1000px;
   margin: auto;
   display: flex;
@@ -64,7 +64,7 @@ body{
   flex: 1;
 }
 
-.formss{
+.formss {
   width: 35vw;
   height: 75vh;
   justify-content: center;
@@ -72,89 +72,154 @@ body{
   margin-top: 18rem;
 }
 
-.contactimage{
+.contactimage {
   height: 50vh;
   place-items: center;
 }
 
-.formimg{
+.formimg {
 
   align-items: center;
   margin-left: 2em;
   padding: 1.5rem;
 }
 
-.aboutpage{
+.aboutpage {
   text-align: justify;
   max-width: 60vw;
   margin: 0 auto;
   padding: 1em;
 }
 
-.aboutimg{
+.aboutimg {
   width: 60vw;
-  margin-bottom:1.5rem;
+  margin-bottom: 1.5rem;
   justify-self: center;
   align-items: center;
 }
 
-@media only screen and (max-width: 1000px){
-    .formimg{
-      display: none;
-    }
-    .formss{
-      width: 90vw;
-      justify-content: center;
-      place-items: center;
-      border: none;
-      margin:auto;
-      border-radius: 5px;
-      padding: 1em;
-      height: auto;
-      background-color: white;
-    box-shadow: 9px 5px 30px -1px rgba(0,0,0,0.75);
+.countryInfo {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  max-width: 1000px;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  box-shadow: 9px 5px 30px -1px rgba(0, 0, 0, 0.75);
+  background-color: white;
+}
 
-    }
+.countryFlag {
+  width: 450px;
+  height: 300px;
+  border: .8px solid rgba(99, 97, 97, 0.288);
+  object-fit: cover;
+  border-radius: 5px;
+}
 
+.countryDeets {
+  display: flex;
+  max-width: 500px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.covidGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 40px;
+  margin: 1.5em auto;
+  place-items: center;
+  max-width: 1000px;
 }
 
 
-@media only screen and (max-width: 750px){
-  .formss{
+.countryDetailPage {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .formimg {
+    display: none;
+  }
+
+  .formss {
     width: 90vw;
     justify-content: center;
     place-items: center;
     border: none;
-    margin:auto;
+    margin: auto;
+    border-radius: 5px;
+    padding: 1em;
+    height: auto;
+    background-color: white;
+    box-shadow: 9px 5px 30px -1px rgba(0, 0, 0, 0.75);
+
+  }
+
+}
+
+
+@media only screen and (max-width: 750px) {
+  .formss {
+    width: 90vw;
+    justify-content: center;
+    place-items: center;
+    border: none;
+    margin: auto;
     border-radius: 5px;
     padding: .5em;
     height: auto;
     background-color: white;
-    box-shadow: 9px 5px 30px -1px rgba(0,0,0,0.75);
+    box-shadow: 9px 5px 30px -1px rgba(0, 0, 0, 0.75);
   }
-  .formimg{
+
+  .formimg {
     display: none;
   }
-  .aboutpage{
+
+  .aboutpage {
     text-align: justify;
     max-width: 85vw;
     margin: 0 auto;
     padding: 1em;
   }
-  .aboutimg{
+
+  .aboutimg {
     width: 80vw;
-    margin-bottom:1.5rem;
+    margin-bottom: 1.5rem;
     justify-self: center;
     align-items: center;
   }
+
+  .countryInfo {
+    width: 90vw;
+  }
+
+  .countryFlag {
+    width: 80vw;
+    height: auto;
+  }
+
+  .countryDeets {
+    text-align: center;
+  }
 }
 
-@media only screen and (max-width: 600px){
-  .covididentifier{
+@media only screen and (max-width: 600px) {
+  .covididentifier {
     display: none;
   }
-  .formimg{
+
+  .formimg {
     display: none;
   }
-  
+
 }
