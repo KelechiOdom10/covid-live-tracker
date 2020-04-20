@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 import { Card } from "react-bootstrap";
 
 function Countries(props) {
@@ -12,11 +13,14 @@ function Countries(props) {
 					borderRadius: "8px",
 				}}
 			>
-				<Card.Img
-					variant="top"
-					src={props.src}
-					style={{ height: "150px", borderRadius: "2px" }}
-				/>
+				<Link to={props.path}>
+					<Card.Img
+						variant="top"
+						src={props.src}
+						style={{ height: "150px", borderRadius: "2px" }}
+					/>
+				</Link>
+
 				<Card.Body>
 					<Card.Title style={{ fontWeight: "bold", fontSize: "28px" }}>
 						{props.country}
