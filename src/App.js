@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Contact from "./components/Contact";
 import About from "./components/About";
+import CountryDetailPage from "./components/CountryDetailPage";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 				<Home path="/" />
 				<Contact path="contact" />
 				<About path="about" />
+				<CountryDetailPage path="countries/:countryName" />
 			</Router>
 		</div>
 	);
