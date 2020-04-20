@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Worldcases from "./Worldcases.js";
 import axios from "axios";
 import Search from "./Search.js";
@@ -17,16 +17,14 @@ function Home() {
 	useEffect(() => {
 		axios
 			.all([
-				axios.get("https://corona.lmao.ninja/all"),
-				axios.get("https://corona.lmao.ninja/countries"),
+				axios.get("https://corona.lmao.ninja/v2/all"),
+				axios.get("https://corona.lmao.ninja/v2/countries"),
 			])
 			.then(responseArr => {
-				setLatest(responseArr[0].data);
+				setLatest([responseArr[0].data]);
 				setResults(responseArr[1].data);
 			});
 	}, []);
-
-	const lastUpdated = new Date(parseInt(latest.updated)).toUTCString();
 
 	const typedToSearch = () => {
 		setSearchCountry(typedCountry);
@@ -38,16 +36,61 @@ function Home() {
 			: item;
 	});
 
-	const countries = filterCountry.map(result => {
+	const countries = filterCountry.map((result, index) => {
+		const resultCases = result.cases.toLocaleString(navigator.language, {
+			minimumFractionDigits: 0,
+		});
+		const resultRecovered = result.recovered.toLocaleString(
+			navigator.language,
+			{
+				minimumFractionDigits: 0,
+			}
+		);
+		const resultDeaths = result.deaths.toLocaleString(navigator.language, {
+			minimumFractionDigits: 0,
+		});
+		const resultActive = result.active.toLocaleString(navigator.language, {
+			minimumFractionDigits: 0,
+		});
+		const resultCritical = result.critical.toLocaleString(navigator.language, {
+			minimumFractionDigits: 0,
+		});
 		return (
 			<Countries
+				key={index}
+				path={`countries/${result.country}`}
 				src={result.countryInfo.flag}
 				country={result.country}
-				cases={result.cases}
-				recovered={result.recovered}
-				deaths={result.deaths}
-				active={result.active}
-				critical={result.critical}
+				cases={resultCases}
+				recovered={resultRecovered}
+				deaths={resultDeaths}
+				active={resultActive}
+				critical={resultCritical}
+			/>
+		);
+	});
+
+	const latestInfo = latest.map((result, index) => {
+		const lastUpdated = new Date(parseInt(result.updated)).toUTCString();
+		const latestCases = result.cases.toLocaleString(navigator.language, {
+			minimumFractionDigits: 0,
+		});
+		const latestRecovered = result.recovered.toLocaleString(
+			navigator.language,
+			{
+				minimumFractionDigits: 0,
+			}
+		);
+		const latestDeaths = result.deaths.toLocaleString(navigator.language, {
+			minimumFractionDigits: 0,
+		});
+		return (
+			<Worldcases
+				key={index}
+				cases={latestCases}
+				recoveries={latestRecovered}
+				deaths={latestDeaths}
+				updated={lastUpdated}
 			/>
 		);
 	});
@@ -60,12 +103,7 @@ function Home() {
 	return (
 		<div className="App">
 			<h1>COVID-19 Live Tracker</h1>
-			<Worldcases
-				cases={latest.cases}
-				recoveries={latest.recovered}
-				deaths={latest.deaths}
-				updated={lastUpdated}
-			/>
+			<>{latestInfo}</>
 			<Search
 				onChange={handleSearch}
 				value={typedCountry}
