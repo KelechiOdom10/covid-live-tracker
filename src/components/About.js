@@ -62,15 +62,14 @@ function About() {
 			</p>
 			<img className="aboutimg" src="/assets/coviddemo.gif" alt=""></img>
 			<h2>Technologies</h2>
-			<p>
-				The languages as well as the libraries used can be seen below:
-				<ul>
-					<li>JavaScript</li>
-					<li>React JS</li>
-					<li>React Bootstrap</li>
-					<li>Reach Router</li>
-				</ul>
-			</p>
+			<p>The languages as well as the libraries used can be seen below:</p>
+			<ul>
+				<li>JavaScript</li>
+				<li>React JS</li>
+				<li>React Bootstrap</li>
+				<li>Reach Router</li>
+			</ul>
+
 			<h2>Installation/Setup</h2>
 			<p>
 				To get up and running you need to create a new React app from your
@@ -124,35 +123,34 @@ function About() {
 				.
 			</p>
 			<h2>Contributions</h2>
-			<p>
-				How you can contribute:
-				<ul>
-					<li>
-						<strong>Step 1: </strong>You can fork this repo or clone this to
-						your local machine using this{" "}
-						<a
-							href="https://github.com/KelechiOdom10/covid-live-tracker"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							link
-						</a>
-					</li>
-					<li>
-						<strong>Step 2: </strong>Hack away and make changes
-					</li>
-					<li>
-						<strong>Step 3: </strong> Create a new pull request using this{" "}
-						<a
-							href="https://github.com/KelechiOdom10/covid-live-tracker/compare"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							link
-						</a>{" "}
-					</li>
-				</ul>
-			</p>
+			<p>How you can contribute:</p>
+			<ul>
+				<li>
+					<strong>Step 1: </strong>You can fork this repo or clone this to your
+					local machine using this{" "}
+					<a
+						href="https://github.com/KelechiOdom10/covid-live-tracker"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						link
+					</a>
+				</li>
+				<li>
+					<strong>Step 2: </strong>Hack away and make changes
+				</li>
+				<li>
+					<strong>Step 3: </strong> Create a new pull request using this{" "}
+					<a
+						href="https://github.com/KelechiOdom10/covid-live-tracker/compare"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						link
+					</a>{" "}
+				</li>
+			</ul>
+
 			<h2>Credits</h2>
 			<p>
 				I'd like to say thank you to Richard Ng, my Whitehat Apprenticeship
