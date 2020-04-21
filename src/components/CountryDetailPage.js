@@ -21,14 +21,15 @@ function CountryDetailPage(props) {
 			});
 	}, [country_name]);
 
+	const AddComas = value => {
+		return value.toLocaleString(navigator.language, {
+			minimumFractionDigits: 0,
+		});
+	};
+
 	const countryInfo = countryDetails.map((result, index) => {
 		const aliases = result.altSpellings.join(" ,");
-		const countryPopulation = result.population.toLocaleString(
-			navigator.language,
-			{
-				minimumFractionDigits: 0,
-			}
-		);
+
 		return (
 			<CountryInfo
 				key={index}
@@ -38,51 +39,23 @@ function CountryDetailPage(props) {
 				capital={result.capital}
 				region={result.region}
 				subregion={result.subregion}
-				population={countryPopulation}
+				population={AddComas(result.population)}
 			/>
 		);
 	});
 
 	const countryStats = countryCovidStats.map((result, index) => {
-		const countryCases = result.cases.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
-		const countryDeaths = result.deaths.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
-		const countryRecovered = result.recovered.toLocaleString(
-			navigator.language,
-			{
-				minimumFractionDigits: 0,
-			}
-		);
-		const countryTests = result.tests.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
-		const todayCases = result.todayCases.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
-		const todayDeaths = result.todayDeaths.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
-		const active = result.active.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
-		const critical = result.critical.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
-
 		return (
 			<CountryCovidDetails
 				key={index}
-				cases={countryCases}
-				deaths={countryDeaths}
-				recovered={countryRecovered}
-				tests={countryTests}
-				todayCases={todayCases}
-				todayDeaths={todayDeaths}
-				active={active}
-				critical={critical}
+				cases={AddComas(result.cases)}
+				deaths={AddComas(result.deaths)}
+				recovered={AddComas(result.recovered)}
+				tests={AddComas(result.tests)}
+				todayCases={AddComas(result.todayCases)}
+				todayDeaths={AddComas(result.todayDeaths)}
+				active={AddComas(result.active)}
+				critical={AddComas(result.critical)}
 			/>
 		);
 	});

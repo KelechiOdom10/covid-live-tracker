@@ -18,7 +18,7 @@ function Home() {
 		axios
 			.all([
 				axios.get("https://corona.lmao.ninja/v2/all"),
-				axios.get("https://corona.lmao.ninja/v2/countries"),
+				axios.get("https://corona.lmao.ninja/v2/countries?sort=cases"),
 			])
 			.then(responseArr => {
 				setLatest([responseArr[0].data]);
@@ -30,6 +30,11 @@ function Home() {
 		setSearchCountry(typedCountry);
 	};
 
+	const AddComas = value => {
+		return value.toLocaleString(navigator.language, {
+			minimumFractionDigits: 0,
+		});
+	};
 	const filterCountry = results.filter(item => {
 		return searchCountry !== ""
 			? item.country.toLowerCase().includes(searchCountry.toLowerCase())
@@ -37,59 +42,29 @@ function Home() {
 	});
 
 	const countries = filterCountry.map((result, index) => {
-		const resultCases = result.cases.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
-		const resultRecovered = result.recovered.toLocaleString(
-			navigator.language,
-			{
-				minimumFractionDigits: 0,
-			}
-		);
-		const resultDeaths = result.deaths.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
-		const resultActive = result.active.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
-		const resultCritical = result.critical.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
 		return (
 			<Countries
 				key={index}
 				path={`countries/${result.country}`}
 				src={result.countryInfo.flag}
 				country={result.country}
-				cases={resultCases}
-				recovered={resultRecovered}
-				deaths={resultDeaths}
-				active={resultActive}
-				critical={resultCritical}
+				cases={AddComas(result.cases)}
+				recovered={AddComas(result.recovered)}
+				deaths={AddComas(result.deaths)}
+				active={AddComas(result.active)}
+				critical={AddComas(result.critical)}
 			/>
 		);
 	});
 
 	const latestInfo = latest.map((result, index) => {
 		const lastUpdated = new Date(parseInt(result.updated)).toUTCString();
-		const latestCases = result.cases.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
-		const latestRecovered = result.recovered.toLocaleString(
-			navigator.language,
-			{
-				minimumFractionDigits: 0,
-			}
-		);
-		const latestDeaths = result.deaths.toLocaleString(navigator.language, {
-			minimumFractionDigits: 0,
-		});
 		return (
 			<Worldcases
 				key={index}
-				cases={latestCases}
-				recoveries={latestRecovered}
-				deaths={latestDeaths}
+				cases={AddComas(result.cases)}
+				recoveries={AddComas(result.recovered)}
+				deaths={AddComas(result.deaths)}
 				updated={lastUpdated}
 			/>
 		);
